@@ -1,0 +1,53 @@
+<section>
+    <nav class="border justify-content-center justify-content-evenly 
+        mx-auto my-3 nav nav-fill nav-pills rounded-pill w-75">
+      <!-- <a class="nav-link rounded-pill" 
+          [routerLink]="[{ outlets: { second: ['equip-search'] } }]" 
+          routerLinkActive="active">بحث عن معدة</a>
+      <a class="nav-link rounded-pill" 
+          [routerLink]="[{ outlets: { second: ['equip-history'] } }]" 
+          routerLinkActive="active">اضافة معدة</a> -->
+          <button class="nav-link rounded-pill" [ngClass]="{'active': doSearch}"
+             (click)="search()">بحث عن معدة</button>
+          <button class="nav-link rounded-pill" [ngClass]="{'active': !doSearch}"
+              (click)="add()">اضافة معدة</button>
+    </nav>
+</section>
+<!-- <div class="alert bg-success text-white alert-dismissible fade 
+        show mx-auto w-50" role="alert" dir="rtl" lang="ar" [ngClass]="{'d-none': status != 'done'}">
+  <strong>تهانينا!</strong> تم اضافة المعدة بنجاح!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div> -->
+<!-- <router-outlet name="second"></router-outlet> -->
+<equip-search (newQueryEvent)="getQuery($event)" *ngIf="doSearch"></equip-search>
+<equip-add (newStatusEvent)="getStatus($event)" *ngIf="!doSearch" ></equip-add>
+<section>
+  <table class="mt-4 rounded shadow table table-bordered table-hover table-striped border-0">
+    <thead class="thead-inverse">
+      <tr>
+        <th>م</th>
+        <th>اسم المعدة</th>
+        <th>رقم المعدة</th>
+        <th>تاريخ الخروج</th>
+        <th>اسم المستخدم</th>
+        <th>القسم</th>
+        <th>بيان الاعطال</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of (data | async); let i=index" [title]="row.id">
+          <td scope="row">{{ i+1 }}</td>
+          <td> {{ row.equipment_title }} </td>
+          <td> {{ row.equipment_serial_number }} </td>
+          <td> {{ row.register_date | date:'yyyy-MM-dd' }} </td>
+          <!-- <td> {{ row.section_id | number  }} </td> -->
+          <!-- <td> {{ row.user_id | number }} </td> -->
+          <!-- <td> {{ row.created_at | date }} </td> -->
+          <td> {{ row.name }} </td>
+          <!-- <td> {{ row.military_id | number }} </td> -->
+          <td> {{ row.title }} </td>
+          <td class="col-4"> {{ row.damage_report }} </td>
+        </tr>
+      </tbody>
+  </table>
+</section>

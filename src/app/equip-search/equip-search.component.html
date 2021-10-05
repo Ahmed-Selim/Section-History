@@ -1,0 +1,10 @@
+<form class="border border-3 form-inline m-auto p-3 rounded-pill shadow w-75 text-center" >
+    <div class="form-group p-4">
+        <label for="equipment_serial" class="mb-2">ادخل رقم المعدة</label>
+        <input type="number" name="equipment_serial" #serial class="form-control text-center" 
+            placeholder="ادخل رقم المعدة">
+            <!-- <small id="helpId" class="text-muted">Help text</small> -->
+        </div>
+        <button (click)="returnQuery(serial.valueAsNumber)" class="btn btn-outline-primary w-25 mw-1 mt-3">بحث</button>
+        <button (click)="returnQuery(null)" class="btn btn-outline-danger w-25 me-1 mt-3">إلغاء</button>
+</form>

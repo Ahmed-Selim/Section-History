@@ -1,0 +1,34 @@
+<div class="alert bg-success text-white alert-dismissible fade 
+        show mx-auto w-50" role="alert" dir="rtl" lang="ar" [ngClass]="{'d-none': result != 'done'}">
+  <strong>تهانينا!</strong> تم اضافة المعدة بنجاح!
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+<form class="border border-3 form-inline m-auto p-3 rounded-3 
+    shadow w-75 text-center" >
+    <div class="row">
+        <div class="form-group p-4 col-6">
+            <label for="equipment_id" class="mb-2">اختر المعدة</label>
+            <select name="equipment_id" class="form-select text-center"
+                placeholder="اختر المعدة" required [(ngModel)]="equip_id">
+                <option selected disabled>اختر المعدة ...</option>
+                <option *ngFor="let equipment of (equipments | async)" [value]="equipment.id | number">
+                    {{ equipment.title }}</option>
+            </select>
+            <!-- <small id="helpId" class="text-muted">Help text</small> -->
+        </div>
+        <div class="form-group p-4 col-6">
+            <label for="equipment_serial" class="mb-2">ادخل رقم المعدة</label>
+            <input type="number" name="equipment_serial" [(ngModel)]="equip_serial"
+                 class="form-control text-center"
+                placeholder="ادخل رقم المعدة" required>
+            <!-- <small id="helpId" class="text-muted">Help text</small> -->
+        </div>
+    </div>
+    <div class="form-group mb-2">
+      <label for="damage_report">بيان الاعطال</label>
+      <textarea class="form-control" name="damage_report" [(ngModel)]="report"
+       id="damage_report" rows="3" required lang="ar"></textarea>
+    </div>
+    <button  class="btn btn-outline-primary w-25 mw-1 mt-3" 
+        (click)="addHistory()">إضافة</button>
+</form>

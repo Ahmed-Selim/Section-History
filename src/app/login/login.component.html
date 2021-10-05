@@ -1,0 +1,51 @@
+<section class="border p-3 rounded-3 shadow text-center w-75 mx-auto my-5" id="login_section">
+  <form class="needs-validation" novalidate dir="rtl" lang="ar">
+    <h1>تسجيل الدخول</h1>
+
+    <div *ngIf="invalidLogin" class="alert alert-danger">
+      بيانات رقم المستخدم و/أو كلمة السر غير صحيحة
+    </div>
+
+    <div class="input-group p-3">
+      <label for="military_number" class="
+          form-label
+          col-3
+          justify-content-around
+          rounded-pill
+          border-secondary
+          bg-transparent
+        ">رقم المستخدم</label>
+      <input type="number" class="form-control mx-2 rounded-pill" [(ngModel)]="user.military_id" required
+        name="military_id" placeholder="رقم المستخدم" />
+    </div>
+    <div class="input-group p-3">
+      <label for="pswrd" class="
+          form-label
+          col-3
+          justify-content-around
+          rounded-pill
+          border-secondary
+          bg-transparent
+        ">كلمة السر</label>
+
+      <input [type]="showPassword ? 'text' : 'password'" class="form-control mx-2 rounded-pill" [(ngModel)]="user.pswrd"
+        required minlength="3" name="pswrd" placeholder="كلمة السر" />
+      <div class="form-check form-switch d-flex flex-column-reverse p-0">
+        <input class="form-check-input" type="checkbox" [checked]="showPassword" (change)="showPassword = !showPassword"
+          id="switch">
+        <label class="form-check-label" for="switch">
+          <img src="assets/images/show-eye.png" [ngClass]="{'d-none': !showPassword}" height="25px" width="25px"
+            alt="show">
+          <img src="assets/images/hide-eye.png" [ngClass]="{'d-none': showPassword}" height="25px" width="25px"
+            alt="hide">
+
+        </label>
+      </div>
+    </div>
+    <button id="go" (click)="signIn()" class="btn btn-lg rounded-pill btn-outline-light w-50 my-3">
+      دخول
+    </button>
+  </form>
+
+  <!-- <pre>{{ user | json }}</pre> -->
+</section>
