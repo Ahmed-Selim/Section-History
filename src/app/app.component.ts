@@ -9,6 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = environment.production;
+  toggler = false;
   
   constructor(public authService:AuthService) {}
 }

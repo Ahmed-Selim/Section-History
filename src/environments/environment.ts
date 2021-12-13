@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: "http://localhost:80/section-history/api/"
+  API_URL: "http://localhost:80/section-history-api/api/"
 };
 
 /*
