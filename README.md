@@ -4,7 +4,8 @@
 
 ## Technology Stack ##
 - HTML , CSS , JavaScript.
-- Angular & Angular CLI version 12.2.5
+- TypeScript.
+- Angular & Angular CLI version 12.2.5 .
 - Bootstrap version 5.
 
 ---
