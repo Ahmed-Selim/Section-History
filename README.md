@@ -1,27 +1,30 @@
 # SectionHistory
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
+> برنامج تقرير الاعطال لمعدات الاقسام خاصة ورشة الاشارة
 
-## Development server
+## Technology Stack ##
+- HTML , CSS , JavaScript.
+- Angular & Angular CLI version 12.2.5
+- Bootstrap version 5.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+---
 
-## Code scaffolding
+## 1) Home Page ##
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+![Home Page](Screenshots/Screenshot_1.png)
+> Home Page Screen
 
-## Build
+## 2) Login Page ##
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+![Login Page](Screenshots/Screenshot_2.png)
+> Login Page Screen
 
-## Running unit tests
+## 3) Search Records Page ##
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+![Search Page](Screenshots/Screenshot_3.png)
+> Search Page Screen
 
-## Running end-to-end tests
+## 4) Add Records Page ##
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+![Add Records Page](Screenshots/Screenshot_4.png)
+> Add Records Page Screen
